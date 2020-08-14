@@ -1,0 +1,175 @@
+/* global style */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 100px;
+    background-color: hsl(205, 100%, 96%);
+}
+
+/* header part */
+.header {
+    margin-bottom: 50px;
+}
+
+.header h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+/* for  underline */
+.underline {
+    width: 100px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: #102a42;
+    margin: 0 auto;
+}
+
+
+/* container part */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5%;
+
+}
+
+.accordion {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+.accordion:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: #102a42;
+    padding: 15px 20px;
+    letter-spacing: 5px;
+}
+
+/* plus and minus btn */
+.btn {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+/* accordion answer */
+.child {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    max-height: 0;
+    background-color: #71bada4d;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    letter-spacing: 5px;
+    overflow: hidden;
+    transition: max-height 0.5s linear;
+}
+
+.child span {
+    padding: 20px 0;
+    color: #617d98;
+}
+
+.grandChild {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    max-height: 0;
+    background-color: #da71c34d;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    letter-spacing: 5px;
+    overflow: hidden;
+    transition: max-height 0.5s linear;
+}
+
+.grandChild span {
+    padding: 20px 0;
+    color: #617d98;
+}
+.lastChild {
+    padding: 0 20px;
+    max-height: 0;
+    background-color: #da71714d;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
+    transition: max-height 0.5s linear;
+}
+.lastChild p {
+    padding: 20px 0;
+    color: #617d98;
+}
+
+.fa-minus {
+    display:none;
+}
+
+
+/* add "show" class by javascript */
+.show .parent-minus {
+    display: inline-block;
+}
+
+.show .parent-plus {
+    display: none;
+}
+
+.show .child {
+    max-height: 200px;
+}
+
+.childShow .child-minus {
+    display: inline-block;
+}
+.childShow .child-plus {
+    display: none;
+}
+.childShow .grandChild {
+    max-height: 200px;
+}
+.grandChildShow .grandchild-plus{
+    display: none;
+}
+.grandChildShow .grandchild-minus {
+    display: inline-block;
+}
+.grandChildShow .lastChild {
+    max-height: 200px;
+}
+
+@media screen and (min-width: 768px){
+    .accordion {
+        width: 700px;
+    }
+
+    .show .panel {
+        max-height: 200px;
+    }
+}
